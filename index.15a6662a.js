@@ -1,0 +1,2 @@
+!function(){function t(t){this._user=t,this._isOpen=!1,this._devices=[]}t.prototype.getUserName=function(){return this._user},t.prototype.renameUser=function(t){this._user=t},t.prototype.getListOfDevices=function(){return this._devices.toString()},t.prototype.addDevice=function(t){this._devices.push(t)},t.prototype.isOpen=function(){return this._isOpen},t.prototype.open=function(){this._isOpen=!0},t.prototype.close=function(){this._isOpen=!1};new t("bebra")}();
+//# sourceMappingURL=index.15a6662a.js.map
