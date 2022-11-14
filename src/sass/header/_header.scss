@@ -1,0 +1,31 @@
+header{
+  display: flex;
+  padding: 5px 20px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #99c7c9;
+}
+
+.header-title{
+  font-family: "Comic Sans MS";
+  font-weight: normal;
+}
+
+.header-list{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+}
+
+.header_item {
+  color: #363636;
+  text-decoration: none;
+
+  font-weight: 500;
+  font-size: 20px;
+  &.active{
+    color: #e37878;
+    text-decoration: underline;
+  }
+}
