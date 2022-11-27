@@ -5,7 +5,7 @@ var MAX_MILK = 2000;
 var MAX_WATER = 5000;
 var MAX_GRAINS = 1000;
 
-function CoffeeMachine(name, color) {
+export function CoffeeMachine(name, color) {
   Device.call(this, name);
   this._color = color;
   this._typesOfCoffee = COFFEE;

@@ -1,6 +1,6 @@
 import { Device } from '../Device';
 
-function Light(name) {
+export function Light(name) {
   Device.call(this, name);
   this._isTurnOn = false;
 }
