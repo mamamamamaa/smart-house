@@ -1,4 +1,3 @@
-
 export function Device(name){
   this._name = name;
   this._isAdded = false;
@@ -8,7 +7,7 @@ Device.prototype.getName = function(){
   return this._name;
 }
 
-Device.prototype.getName = function(name){
+Device.prototype.setName = function(name){
  this._name = name;
 }
 

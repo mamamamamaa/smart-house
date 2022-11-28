@@ -19,26 +19,29 @@ Kettle.prototype.turnOn = function () {
 
   if (this._volume > 200) {
     this._boiling = setTimeout(function () {
-      this._isBoiled = true;
       console.log("Yep-yep, i'm boiled :C");
+      this._isBoiled = true;
       this._volume -= this._volume / 10;
       this._isTurnOn = false;
+
+      setTimeout(function () {
+        console.log("hey, sorry, i'm cold down :(");
+        this._isBoiled = false;
+      }, 10000);
     }, 10000);
   } else {
+      this._isTurnOn = false;
     console.log('hey buddy, i need more water xd');
-  }
-
-  if (this._isBoiled) {
-    setTimeout(function () {
-      console.log("hey, sorry, i'm coled down :(");
-      this._coledDown();
-    }, 10000);
   }
 };
 
 Kettle.prototype.getVolume = function () {
   return this._volume;
 };
+
+Kettle.prototype.isBoiled = function() {
+  return this._isBoiled;
+}
 
 Kettle.prototype.addVolume = function (volume) {
   this._volume =

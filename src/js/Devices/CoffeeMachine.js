@@ -81,11 +81,15 @@ CoffeeMachine.prototype.start = function (type) {
         this._grains -= 100;
         this._water -= 500;
         this._isStarted = true;
+        console.log("Start making " + COFFEE.am);
         setTimeout(function () {
           this._isReady = true;
           this._isStarted = false;
+
+          console.log("Dude, take your "+COFFEE.am+"!");
         }, 10000);
       } else {
+        console.log('I need more ingredients!\n\t> grains - 100g\n\t> water - 500g\n');
         return false;
       }
       break;
@@ -94,17 +98,20 @@ CoffeeMachine.prototype.start = function (type) {
       if (
         this.getGrains() >= 100 &&
         this.getWater() >= 300 &&
-        this._milk >= 200
+        this.getMilk() >= 200
       ) {
         this._grains -= 100;
         this._water -= 300;
-        this._grains -= 200;
+        this._milk -= 200;
         this._isStarted = true;
+        console.log("Start making " + COFFEE.cap);
         setTimeout(function () {
           this._isReady = true;
           this._isStarted = false;
+          console.log("Dude, take your "+COFFEE.cap+"!");
         }, 10000);
       } else {
+        console.log('I need more ingredients!\n\t> grains - 100g\n\t> water - 300g\n\t> milk - 200g\n');
         return false;
       }
       break;
@@ -113,23 +120,27 @@ CoffeeMachine.prototype.start = function (type) {
       if (
         this.getGrains() >= 100 &&
         this.getWater() >= 100 &&
-        this._milk >= 400
+        this.getMilk() >= 400
       ) {
         this._grains -= 100;
         this._water -= 100;
-        this._grains -= 400;
+        this._milk -= 400;
         this._isStarted = true;
+        console.log("Start making " + COFFEE.lat);
         setTimeout(function () {
           this._isReady = true;
           this._isStarted = false;
+          console.log("Dude, take your " + COFFEE.lat+"!");
         }, 10000);
       } else {
+        console.log('I need more ingredients!\n\t> grains - 100g\n\t> water - 100g\n\t> milk - 400g\n');
         return false;
       }
       break;
     }
     default: {
-      return 'I don`t this recipe :(';
+      console.log('I don`t know this recipe :(')
+      return false;
     }
   }
 };
